@@ -184,6 +184,7 @@ exports = module.exports = {
         map[key]['fieldToColumn'].forEach( f => f(key, row, isNewResource) );
       } 
 
+      exports.cl('transformObjectToRow key: ' + key);
       const fieldTypeDb = global.sri4node_configuration.informationSchema['/' + exports.tableFromMapping(resourceMapping)][key].type
       const fieldTypeObject = resourceMapping.schema.properties[key] 
                                   ? resourceMapping.schema.properties[key].type
